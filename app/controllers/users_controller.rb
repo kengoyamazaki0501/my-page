@@ -11,6 +11,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @mypages = @user.mypages
+    # @comment = Comment.new
+    # @comments = @mypage.comments.includes(:user)
   end
 
   def edit
