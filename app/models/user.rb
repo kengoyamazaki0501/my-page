@@ -9,7 +9,7 @@ class User < ApplicationRecord
     validates :password
     validates :email
   end
-  
+
   has_many :mypages
   has_many :comments
 end
