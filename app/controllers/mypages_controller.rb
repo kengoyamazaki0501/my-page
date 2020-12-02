@@ -5,12 +5,14 @@ class MypagesController < ApplicationController
 
   def index
     @mypage = Mypage.includes(:user)
+    # @mypage = Mypage.includes(:user).user('created_at DESC')
+    
   end
 
   def show
     @mypage = Mypage.find(params[:id])
-    # @comment = Comment.new
-    # @comments = @mypage.comments.includes(:user)
+    @comment = Comment.new
+    @comments = @mypage.comments.includes(:user)
   end
 
   def new
