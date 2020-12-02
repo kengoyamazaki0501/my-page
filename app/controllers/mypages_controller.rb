@@ -1,12 +1,10 @@
 class MypagesController < ApplicationController
-
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :create]
-  before_action :move_to_index, only:[:edit, :update]
+  before_action :move_to_index, only: [:edit, :update]
 
   def index
     @mypage = Mypage.includes(:user)
     # @mypage = Mypage.includes(:user).user('created_at DESC')
-    
   end
 
   def show
@@ -30,15 +28,13 @@ class MypagesController < ApplicationController
 
   def edit
     @mypage = Mypage.find(params[:id])
-    unless user_signed_in? && current_user.id == @mypage.user_id
-      redirect_to root_path
-    end
+    redirect_to root_path unless user_signed_in? && current_user.id == @mypage.user_id
   end
 
   def update
     @mypage = Mypage.find(params[:id])
     if @mypage.update(mypage_params)
-       redirect_to root_path
+      redirect_to root_path
     else
       render :edit
     end
@@ -52,12 +48,11 @@ class MypagesController < ApplicationController
 end
 
 private
+
 def mypage_params
   params.require(:mypage).permit(:title, :catch_copy, :concept, :image).merge(user_id: current_user.id)
 end
 
 def move_to_index
-  unless user_signed_in?
-    redirect_to action: :index
-  end
+  redirect_to action: :index unless user_signed_in?
 end
