@@ -1,10 +1,10 @@
 class MypagesController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :create]
-  before_action :move_to_index, only: [:edit, :update]
+  before_action :move_to_index, only: [:edit, :update、]
+  before_action :set_search
 
   def index
     @mypage = Mypage.includes(:user)
-    # @mypage = Mypage.includes(:user).user('created_at DESC')
   end
 
   def show
@@ -45,14 +45,19 @@ class MypagesController < ApplicationController
     mypage.destroy
     redirect_to root_path
   end
-end
 
-private
+  def search
+    @search = Mypage.ransack(params[:q])
+    @mypages = @search.result
+  end
 
-def mypage_params
-  params.require(:mypage).permit(:title, :catch_copy, :concept, :image).merge(user_id: current_user.id)
-end
+  private
 
-def move_to_index
-  redirect_to action: :index unless user_signed_in?
+  def mypage_params
+    params.require(:mypage).permit(:title, :catch_copy, :concept, :image, :movie).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
 end

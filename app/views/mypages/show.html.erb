@@ -5,15 +5,22 @@
         <%= "講座について"%>
       </p>
       <%= link_to @mypage.user.name, root_path, class: :prototype__user %>
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+      <% if user_signed_in? && current_user.id == @mypage.user_id %>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_mypage_path(@mypage.id), class: :prototype__btn %>
           <%= link_to "削除する", mypage_path(@mypage.id), class: :prototype__btn, method: :delete %>
         </div>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+        <% end %>
       <div class="prototype__image">
         <%= image_tag @mypage.image %>
       </div>
+
+       <div class="prototype__image">
+       <% if @mypage.movie.attached? %>
+       <video src="<%= rails_blob_path(@mypage.movie) %>" type="video/mp4" controls width="320" height="240"></video>
+       <% end %>
+      </div>
+
       <div class="prototype__body">
         <div class="prototype__detail">
           <p class="detail__title">キャッチコピー</p>
@@ -29,7 +36,6 @@
         </div>
       </div>
       <div class="prototype__comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
         <% if current_user %>
           <%= form_with(model:[@mypage, @comment], local: true) do |f| %>
             <div class="field">
@@ -41,16 +47,13 @@
             </div>
           <% end %> 
         <% end %>
-        <%# // ログインしているユーザーには上記を表示する %>
         <ul class="comments_lists">
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
           <% @comments.each do |comment| %>
             <li class="comments_list">
               <%= comment.text %>
               <%= link_to comment.user.name, user_path(@mypage.id), class: :comment_user, method: :get %>
             </li>
           <% end %>
-          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
       </div>
     </div>

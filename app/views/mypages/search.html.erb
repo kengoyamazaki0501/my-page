@@ -1,0 +1,5 @@
+<div class="contents row">
+  <% @mypages.each do |mypage| %>
+    <%= render partial: "mypage", locals: { mypage: mypage } %>
+  <% end %>
+</div>
