@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :authenticate_user!, only [:show]
-
+  before_action :set_search
   def index
     @users = User.includes(:user)
     @mypages = Mypage.all

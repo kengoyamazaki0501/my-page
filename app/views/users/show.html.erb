@@ -5,7 +5,7 @@
         <%= "#{@user.name}さん"%>
       </h2>
       <div class="prototype__manage">
-          <%= link_to "編集する", root_path, class: :prototype__btn %>
+          <%= link_to "編集する", edit_user_path, class: :prototype__btn %>
           <%= link_to "削除する", root_path, class: :prototype__btn %>
         </div>
       <table class="table">
@@ -36,7 +36,6 @@
         <%= "#{@user.name}さんの投稿一覧"%>
       </h2>
       <div class="user__card">
-        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
         <%= render partial: 'mypages/mypage', collection: @mypages %>
       </div>
     </div>
