@@ -21,25 +21,25 @@ describe Mypage do
       it 'titleが空では投稿出来ない' do
         @mypage.title = ''
         @mypage.valid?
-        expect(@mypage.errors.full_messages).to include("Title can't be blank")
+        expect(@mypage.errors.full_messages).to include("タイトルを入力してください")
       end
 
       it 'catch_copyが空では投稿出来ない' do
         @mypage.catch_copy = ''
         @mypage.valid?
-        expect(@mypage.errors.full_messages).to include("Catch copy can't be blank")
+        expect(@mypage.errors.full_messages).to include("キャッチコピーを入力してください")
       end
 
       it 'conceptが空では投稿出来ない' do
         @mypage.concept = ''
         @mypage.valid?
-        expect(@mypage.errors.full_messages).to include("Concept can't be blank")
+        expect(@mypage.errors.full_messages).to include("コンセプトを入力してください")
       end
 
       it 'imageが空では投稿出来ない' do
         @mypage.image = nil
         @mypage.valid?
-        expect(@mypage.errors.full_messages).to include("Image can't be blank")
+        expect(@mypage.errors.full_messages).to include("画像を入力してください")
       end
     end
   end
