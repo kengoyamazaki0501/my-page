@@ -11,5 +11,5 @@ class User < ApplicationRecord
   end
 
   has_many :mypages
-  has_many :comments
+  has_many :comments,dependent: :destroy
 end
