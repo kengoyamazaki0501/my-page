@@ -1,0 +1,10 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       name: ユーザー名
+     mypage:
+       title: タイトル
+       image: 画像
+       concept: コンセプト
+       catch_copy: キャッチコピー
