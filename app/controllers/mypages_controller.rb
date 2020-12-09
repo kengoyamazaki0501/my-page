@@ -1,7 +1,6 @@
 class MypagesController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :new, :create]
-  before_action :move_to_index, only: [:edit, :update、]
-  before_action :set_search
+  before_action :move_to_index, only: [:edit, :update]
 
   def index
     @mypage = Mypage.includes(:user)
