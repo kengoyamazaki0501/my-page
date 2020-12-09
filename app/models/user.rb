@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates :password, length: { minimum: 6 }
-  validates_format_of :password, with: PASSWORD_REGEX
+  validates_format_of :password, with: PASSWORD_REGEX, message: 'を半角英数混合で入力してください'
 
   has_many :mypages
   has_many :comments, dependent: :destroy
