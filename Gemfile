@@ -68,3 +68,4 @@ group :development do
 end
 
 gem 'ransack'
+gem 'rails-i18n'
