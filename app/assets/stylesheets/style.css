@@ -267,6 +267,10 @@ a {
   text-decoration: underline;
 }
 
+.follow__btn{
+  border: 8px double #0090bb;
+}
+
 /* ユーザーページ */
 .user__wrapper{
   min-height: calc(100vh - 161px);
@@ -298,6 +302,7 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+
 /* フッター */
 
 .footer {

@@ -16,8 +16,9 @@
       </div>
       <% if user_signed_in? %>
       <% if current_user.following?(@mypage.user) %>   
-      <%= link_to 'フォロー外す', unfollow_path(@mypage.user,mypage_id:@mypage.id), method: :post %>
-      <% else %>  <%= link_to 'フォローする', follow_path(@mypage.user,mypage_id:@mypage.id), method: :post %>
+      <%= link_to 'フォロー外す', unfollow_path(@mypage.user,mypage_id:@mypage.id), method: :post, class: :follow__btn %>
+      <% else %>  
+      <%= link_to 'フォローする', follow_path(@mypage.user,mypage_id:@mypage.id), method: :post, class: :follow__btn  %>
       <% end %>
       <% end %>
 
