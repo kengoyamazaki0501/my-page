@@ -26,25 +26,25 @@ describe User do
       it 'nameが空だと登録できない' do
         @user.name = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("ユーザー名を入力してください")
+        expect(@user.errors.full_messages).to include('ユーザー名を入力してください')
       end
 
       it 'emailが空では登録できない' do
         @user.email = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Eメールを入力してください")
+        expect(@user.errors.full_messages).to include('Eメールを入力してください')
       end
 
       it 'emailが空では登録できない' do
         @user.email = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Eメールを入力してください")
+        expect(@user.errors.full_messages).to include('Eメールを入力してください')
       end
 
       it 'passwordが空では登録できない' do
         @user.password = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワードを入力してください")
+        expect(@user.errors.full_messages).to include('パスワードを入力してください')
       end
 
       it 'passwordが5文字以下であれば登録できない' do
@@ -57,7 +57,7 @@ describe User do
       it 'passwordが存在してもpassword_confirmationが空では登録できない' do
         @user.password_confirmation = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
+        expect(@user.errors.full_messages).to include('パスワード（確認用）とパスワードの入力が一致しません')
       end
 
       it '重複したemailが存在する場合登録できない' do
@@ -71,19 +71,19 @@ describe User do
       it 'passwordが英語のみでは登録できないこと' do
         @user.password = 'tarouyamada'
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワードを半角英数混合で入力してください")
+        expect(@user.errors.full_messages).to include('パスワードを半角英数混合で入力してください')
       end
 
       it 'passwordが数字のみでは登録できないこと' do
         @user.password = '1111111'
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワードを半角英数混合で入力してください")
+        expect(@user.errors.full_messages).to include('パスワードを半角英数混合で入力してください')
       end
 
       it 'passwordが全角では登録できないこと' do
         @user.password = 'YAMADA０１０１'
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワードを半角英数混合で入力してください")
+        expect(@user.errors.full_messages).to include('パスワードを半角英数混合で入力してください')
       end
     end
   end
