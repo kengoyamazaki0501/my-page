@@ -1,24 +1,55 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
+| Column       | Type    | Options       |
+| ------------ | ------- | ------------- |
+| email        | string  | null: false   |
+| password     | string  | null: false   |
+| name         | string  | null: false   |
+| gender       | string  |               |
+| introduction | string  |               |
 
-Things you may want to cover:
+### Association
+- has_many :prototypes 
+- has_many :comments
+- has_many :relationships foreign_key: 'follower_id'
+- has_many :relationships foreign_key: 'followed_id'
+- has_many :following_users, through: :follower, source: :followed
+- has_many :follower_users, through: :followed, source: :follower
 
-* Ruby version
 
-* System dependencies
+##  mypages テーブル
+| Column     | Type         | Options                        |
+| ---------- | ------------ | ------------------------------ |
+| title      | string       | null: false                    |
+| catch_copy | text         | null: false                    |
+| concept    | text         | null: false                    |
+| user       | references   | null: false, foreign_key: true |
 
-* Configuration
+### Association
+- has_many :comments 
+- belongs_to :user
 
-* Database creation
 
-* Database initialization
+## comments テーブル
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| text        | text       | null: false,                   |
+| user        | references | null: false, foreign_key: true |
+| mypage      | references | null: false, foreign_key: true |
 
-* How to run the test suite
+### Association
+- belongs_to :user
+- belongs_to :mypage
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## relationships テーブル
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| follower_id | bigint     | null: false, foreign_key: true |
+| followed_id | bigint     | null: false, foreign_key: true |
 
-* ...
+### Association
+- belongs_to :follower, class_name: 'User'  
+- belongs_to :followed, class_name: 'User'
+
