@@ -1,10 +1,9 @@
 FactoryBot.define do
   factory :mypage do
+    title { 'test' }
+    catch_copy { 'test' }
+    concept { 'test' }
 
-    title            {"test"}
-    catch_copy      {"test"}
-    concept          {"test"}
-    
     association :user
 
     after(:build) do |image|
