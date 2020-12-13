@@ -14,14 +14,19 @@
       <div class="prototype__image">
         <%= image_tag @mypage.image %>
       </div>
+      <div class="test_prototype__detail">
       <% if user_signed_in? %>
-      <% if current_user.following?(@mypage.user) %>   
-      <%= link_to 'フォロー外す', unfollow_path(@mypage.user,mypage_id:@mypage.id), method: :post, class: :follow__btn %>
-      <% else %>  
-      <%= link_to 'フォローする', follow_path(@mypage.user,mypage_id:@mypage.id), method: :post, class: :follow__btn  %>
+        <% if current_user.following?(@mypage.user) %>   
+          <%= link_to 'フォロー外す', unfollow_path(@mypage.user,mypage_id:@mypage.id), method: :post, class: :follow__btn %>
+        <% else %>  
+          <%= link_to 'フォローする', follow_path(@mypage.user,mypage_id:@mypage.id), method: :post, class: :follow__btn  %>
+        <% end %>
       <% end %>
-      <% end %>
-
+      <%= link_to 'フォロー中', follow_path(@mypage.user,mypage_id:@mypage.id), method: :post, class: :follow__btn  %>
+      <%= @fllowing.count %>
+      <%= link_to 'フォロワー', follow_path(@mypage.user,mypage_id:@mypage.id), method: :post, class: :follow__btn  %>
+      <%= @follwer.count %>
+      </div>
        <div class="prototype__image">
        <% if @mypage.movie.attached? %>
        <video src="<%= rails_blob_path(@mypage.movie) %>" type="video/mp4" controls width="320" height="240"></video>
