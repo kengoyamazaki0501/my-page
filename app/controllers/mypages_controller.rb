@@ -10,6 +10,9 @@ class MypagesController < ApplicationController
     @mypage = Mypage.find(params[:id])
     @comment = Comment.new
     @comments = @mypage.comments.includes(:user)
+    @user = @mypage.user
+    @follwer = @user.follower_users
+    @fllowing = @user.following_users
   end
 
   def new

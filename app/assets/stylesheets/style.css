@@ -193,6 +193,11 @@ a {
   text-decoration: underline;
 }
 
+.test_prototype__detail{  
+  display: flex;  
+  justify-content: center;  
+  margin-bottom: 8px;}
+
 /* 詳細ページ */
 .prototype__wrapper{
   min-height: calc(100vh - 161px);
