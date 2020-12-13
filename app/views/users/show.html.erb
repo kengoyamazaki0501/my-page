@@ -16,22 +16,48 @@
             <th class="table__col1">name</th>
             <td class="table__col2"><%= @user.name %></td>
           </tr>
+
           <tr>
             <th class="table__col1">mail</th>
             <td class="table__col2"><%= @user.email %></td>
           </tr>
+
           <tr>
             <th class="table__col1">password</th>
             <td class="table__col2"><%= @user.password %></td>
           </tr>
+
           <tr>
             <th class="table__col1">gender</th>
             <td class="table__col2"><%= @user.gender %></td>
           </tr>
+
           <tr>
             <th class="table__col1">introduction</th>
             <td class="table__col2"><%= @user.introduction %></td>
           </tr>
+            <% if  @user.twitter.present? %>
+          <tr>
+            <th class="table__col1">twitter</th>
+            <td class="table__col2"><%= twitter_url @user.twitter %></td>
+          </tr>
+          <% end %>
+          
+          <tr>
+            <th class="table__col1">facebook</th>
+            <td class="table__col2"><%= @user.facebook %></td>
+          </tr>
+
+          <tr>
+            <th class="table__col1">instagram</th>
+            <td class="table__col2"><%=instagram_url @user.instagram %></td>
+          </tr>
+
+          <tr>
+            <th class="table__col1">youtube</th>
+            <td class="table__col2"><%= @user.youtube %></td>
+          </tr>
+          
         </tbody>
       </table>
       <h2 class="page-heading">
@@ -43,3 +69,5 @@
     </div>
   </div>
 </div>
+
+   

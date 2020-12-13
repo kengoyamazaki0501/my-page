@@ -6,13 +6,13 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :name
-    validates :password
+    # validates :password
     validates :email, uniqueness: true
   end
 
-  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
-  validates :password, length: { minimum: 6 }
-  validates_format_of :password, with: PASSWORD_REGEX, message: 'を半角英数混合で入力してください'
+  # PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
+  # validates :password, length: { minimum: 6 }
+  # validates_format_of :password, with: PASSWORD_REGEX, message: 'を半角英数混合で入力してください'
 
   has_many :mypages
   has_many :comments, dependent: :destroy
@@ -35,4 +35,15 @@ class User < ApplicationRecord
     p following_users
     following_users.include?(user)
   end
+
+  def update_without_current_user_password(params)
+    params.delete(:current_password)
+    params.delete(:password)
+    params.delete(:password_confirmation)
+    update_attributes(params)
+  end
+
+  # def password_required?
+  #   encrypted_password.blank? || encrypted_password_changed?
+  # end
 end
