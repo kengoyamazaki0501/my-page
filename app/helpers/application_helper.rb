@@ -13,7 +13,7 @@ module ApplicationHelper
     link_to name, File.join('https://www.facebook.com', name)
   end
   def youtube_url(url)
-    return if name.blank?
+    # return if name.blank?
     link_to url,url 
   end
 
