@@ -107,19 +107,23 @@
 
 ### 3
 SNSのアカウントをユーザーの詳細画面に掲示させ、ユーザー同士の繋がりをより強くすること
-[![Image from Gyazo](https://i.gyazo.com/33d2cbb3c54383a55fc25439b57f10b3.gif)](https://gyazo.com/33d2cbb3c54383a55fc25439b57f10b3)
+#### [インスタグラム遷移]
+![284857f98a870010e6eb4b9149f60d92](https://user-images.githubusercontent.com/73152667/102046796-6a1b1480-3e1f-11eb-91b9-d1e461f130a3.gif)
 
+#### [ツイッター遷移]
 [![Image from Gyazo](https://i.gyazo.com/a7b8faa46f2a85ad5a935794f22bd738.gif)](https://gyazo.com/a7b8faa46f2a85ad5a935794f22bd738)
 
-[![Image from Gyazo](https://i.gyazo.com/1ab73eecf182c6d7d5a811ffaf32490c.gif)](https://gyazo.com/1ab73eecf182c6d7d5a811ffaf32490c)
+#### [フェイスブック遷移]
+![dcacbff2f016fd43a27f0f6c33f11186](https://user-images.githubusercontent.com/73152667/102047272-4f956b00-3e20-11eb-87d2-02dc9f07a654.gif)
 
-[![Image from Gyazo](https://i.gyazo.com/ab3589e7f26896748792c9afe8e0c1a5.gif)](https://gyazo.com/ab3589e7f26896748792c9afe8e0c1a5)
 
+#### [ユーチューブ遷移]
 [![Image from Gyazo](https://i.gyazo.com/106b808237542404eadc358ad0f08f7c.gif)](https://gyazo.com/106b808237542404eadc358ad0f08f7c)
 
 ### 4
 投稿の検索がログイン中であればどこからでもできる様にすること
-[![Image from Gyazo](https://i.gyazo.com/15d47d6b379b50d67ad808baceb02a5a.gif)](https://gyazo.com/15d47d6b379b50d67ad808baceb02a5a)
+![0d240b135a4bb84a1525a4b8ee6926c0](https://user-images.githubusercontent.com/73152667/102047448-9d11d800-3e20-11eb-935f-c768b680e93b.gif)
+
 
 # 実装予定の機能
 ユーザーの詳細ページで、どのユーザーにフォローされていて、どのユーザーをフォローしているのかを表示させたいと思っております。
