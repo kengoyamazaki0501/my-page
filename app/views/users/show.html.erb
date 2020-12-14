@@ -42,21 +42,27 @@
             <td class="table__col2"><%= twitter_url @user.twitter %></td>
           </tr>
           <% end %>
-          
+
+          <% if  @user.facebook.present? %>
           <tr>
             <th class="table__col1">facebook</th>
-            <td class="table__col2"><%= @user.facebook %></td>
+            <td class="table__col2"><%=facebook_url @user.facebook %></td>
           </tr>
-
+          <% end %>
+          
+           <% if  @user.instagram.present? %>
           <tr>
             <th class="table__col1">instagram</th>
             <td class="table__col2"><%=instagram_url @user.instagram %></td>
           </tr>
+          <% end %>
 
+           <% if  @user.youtube.present? %>
           <tr>
             <th class="table__col1">youtube</th>
-            <td class="table__col2"><%= @user.youtube %></td>
+            <td class="table__col2"><%=youtube_url @user.youtube %></td>
           </tr>
+          <% end %>
           
         </tbody>
       </table>

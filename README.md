@@ -8,6 +8,10 @@
 | name         | string  | null: false   |
 | gender       | string  |               |
 | introduction | string  |               |
+| twitter      | string  |               |
+| facebook     | string  |               |
+| instagram    | string  |               |
+| youtube      | string  |               |
 
 ### Association
 - has_many :prototypes 
@@ -86,21 +90,34 @@
 
 # 要件
 
-### 1
-ユーザー同士がアプリケーション内でつながれる様にすること
+##  ユーザー同士がアプリケーション内でつながれる様にするために、下記の機能を実装しました。
 
-### 2
+### 1
 画像だけでなく、動画の投稿もできる様にすること
 
-### 3
+[![Image from Gyazo](https://i.gyazo.com/8e7c77d5cdc770e058654988b2f41757.gif)](https://gyazo.com/8e7c77d5cdc770e058654988b2f41757)
+
+### 2
 投稿内容にコメント機能を持たせて、どんなユーザーがコメントを残したのかを
 わかる様にすること
 
-### 4
-SNSのアカウントをユーザーの詳細画面に掲示させ、ユーザー同士の繋がりをより強くすること
+[![Image from Gyazo](https://i.gyazo.com/f498703cd7131a8b44fca311f2571cd8.gif)](https://gyazo.com/f498703cd7131a8b44fca311f2571cd8)
 
-### 5
+### 3
+SNSのアカウントをユーザーの詳細画面に掲示させ、ユーザー同士の繋がりをより強くすること
+[![Image from Gyazo](https://i.gyazo.com/33d2cbb3c54383a55fc25439b57f10b3.gif)](https://gyazo.com/33d2cbb3c54383a55fc25439b57f10b3)
+
+[![Image from Gyazo](https://i.gyazo.com/a7b8faa46f2a85ad5a935794f22bd738.gif)](https://gyazo.com/a7b8faa46f2a85ad5a935794f22bd738)
+
+[![Image from Gyazo](https://i.gyazo.com/1ab73eecf182c6d7d5a811ffaf32490c.gif)](https://gyazo.com/1ab73eecf182c6d7d5a811ffaf32490c)
+
+[![Image from Gyazo](https://i.gyazo.com/ab3589e7f26896748792c9afe8e0c1a5.gif)](https://gyazo.com/ab3589e7f26896748792c9afe8e0c1a5)
+
+[![Image from Gyazo](https://i.gyazo.com/106b808237542404eadc358ad0f08f7c.gif)](https://gyazo.com/106b808237542404eadc358ad0f08f7c)
+
+### 4
 投稿の検索がログイン中であればどこからでもできる様にすること
+[![Image from Gyazo](https://i.gyazo.com/15d47d6b379b50d67ad808baceb02a5a.gif)](https://gyazo.com/15d47d6b379b50d67ad808baceb02a5a)
 
 # 実装予定の機能
 ユーザーの詳細ページで、どのユーザーにフォローされていて、どのユーザーをフォローしているのかを表示させたいと思っております。
