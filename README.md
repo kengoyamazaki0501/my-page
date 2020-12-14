@@ -96,7 +96,8 @@
 ### 1
 画像だけでなく、動画の投稿もできる様にすること
 
-[![Image from Gyazo](https://i.gyazo.com/f297f51abbbf4a575fa999101333dae8.gif)](https://gyazo.com/f297f51abbbf4a575fa999101333dae8)
+![260f63b0f410a5ea92c9a780464df1b4](https://user-images.githubusercontent.com/73152667/102046092-f2001f00-3e1d-11eb-8f85-84b59ac221f3.gif)
+
 
 ### 2
 投稿内容にコメント機能を持たせて、どんなユーザーがコメントを残したのかを
